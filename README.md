@@ -7,7 +7,7 @@ Currently implemented for windows only.
 ### Add
 ```
 try {
-    registry.add("HKEY_CURRENT_USER\\Environment", "Test", new WindowsRegistryValue(REG_DWORD, "0x1"));
+    new WindowsRegistry().add("HKEY_CURRENT_USER\\Environment", "Test", new WindowsRegistryValue(REG_DWORD, "0x1"));
 } catch (RegistryException e) {
     throw new IllegalStateException("Can't add registry entry", e);
 }
@@ -15,7 +15,7 @@ try {
 ### Get
 ```
 try {
-    RegistryValue value = registry.get("HKEY_CURRENT_USER\\Environment", "Test");
+    RegistryValue value = new WindowsRegistry().get("HKEY_CURRENT_USER\\Environment", "Test");
 } catch (RegistryException e) {
     throw new IllegalStateException("Can't add registry entry", e);
 }
@@ -23,7 +23,7 @@ try {
 ### Delete
 ```
 try {
-    registry.delete("HKEY_CURRENT_USER\\Environment", "Test");
+    new WindowsRegistry().delete("HKEY_CURRENT_USER\\Environment", "Test");
 } catch (RegistryException e) {
     throw new IllegalStateException("Can't delete registry entry", e);
 }
