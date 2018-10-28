@@ -1,4 +1,4 @@
-# Registry for java (reg4j)
+# OS registry access for java (reg4j)
 A module to access OS registry.
 
 Currently implemented for windows only.
